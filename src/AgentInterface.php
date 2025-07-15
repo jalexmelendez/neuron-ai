@@ -9,6 +9,7 @@ use NeuronAI\Chat\History\AbstractChatHistory;
 use NeuronAI\Chat\History\ChatHistoryInterface;
 use NeuronAI\Chat\Messages\Message;
 use NeuronAI\Providers\AIProviderInterface;
+use NeuronAI\SystemPrompt;
 use NeuronAI\Tools\ToolInterface;
 use NeuronAI\Tools\Toolkits\ToolkitInterface;
 
@@ -20,7 +21,7 @@ interface AgentInterface extends \SplSubject
 
     public function withInstructions(string $instructions): AgentInterface;
 
-    public function instructions(): string;
+    public function instructions(): string | SystemPrompt;
 
     public function addTool(ToolInterface|ToolkitInterface|array $tools): AgentInterface;
 
