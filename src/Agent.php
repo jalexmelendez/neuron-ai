@@ -20,9 +20,9 @@ class Agent implements AgentInterface
     /**
      * The system instructions.
      */
-    protected string $instructions;
+    protected string | SystemPrompt $instructions;
 
-    public function withInstructions(string $instructions): AgentInterface
+    public function withInstructions(string | SystemPrompt $instructions): AgentInterface
     {
         $this->instructions = $instructions;
         return $this;
